@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ol-infra-health-checks"
+version = "1.0.0"
+description = "MIT OL infrastructure health checks"
+authors = ["Chris Patti <feoh@feoh.org>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.4"
+pytest-testinfra = {version = "^10.0.0", extras = ["docker"]}
+
+
+[tool.poetry.group.dev.dependencies]
+pyright = "^1.1.345"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
