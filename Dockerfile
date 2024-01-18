@@ -1,4 +1,4 @@
-FROM python-3.11-bookworm
+FROM 3.11-bookworm
 
 VOLUME ["/var/run/docker.sock"]
 
@@ -9,4 +9,3 @@ COPY tests /tests
 
 WORKDIR /tests
 CMD python3 -m pytest -v
-
