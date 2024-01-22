@@ -8,4 +8,4 @@ RUN mkdir /tests
 COPY tests /tests
 
 WORKDIR /tests
-CMD python3 -m pytest -v
+ENTRYPOINT /usr/bin/python3 -m pytest -v
