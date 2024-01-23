@@ -9,4 +9,4 @@ RUN mkdir /tests
 COPY tests /tests
 
 WORKDIR /tests
-ENTRYPOINT ['/usr/local/bin/python3' '-m pytest' '-v' '--show-capture=stdout']
+CMD /usr/local/bin/python3 -m pytest -v --show-capture=stdout
