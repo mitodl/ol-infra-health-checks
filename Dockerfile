@@ -1,6 +1,7 @@
 FROM python:3.11-bookworm
 
 VOLUME ["/var/run/docker.sock"]
+VOLUME ["/etc/docker/compose"]
 
 # Add Docker's official GPG key:
 RUN apt-get -y update
