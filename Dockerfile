@@ -8,4 +8,5 @@ RUN mkdir /tests
 COPY tests /tests
 
 WORKDIR /tests
-ENTRYPOINT ['python3' '-m pytest' '-v' '--show-capture=stdout']
+#ENTRYPOINT ['python3' '-m pytest' '-v' '--show-capture=stdout']
+ENTRYPOINT ["tail", "-f", "/dev/null"]
