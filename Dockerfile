@@ -2,8 +2,6 @@ FROM python:3.11-bookworm
 
 VOLUME ["/var/run/docker.sock"]
 
-# Copy host's docker compose into the container context
-ADD /etc/docker/compose /etc/docker/compose
 # Add Docker's official GPG key:
 RUN apt-get -y update
 RUN apt-get -y install ca-certificates curl gnupg
