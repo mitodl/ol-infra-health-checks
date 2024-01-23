@@ -8,4 +8,4 @@ RUN mkdir /tests
 COPY tests /tests
 
 WORKDIR /tests
-ENTRYPOINT /usr/bin/python3 -m pytest -v --show-capture=stdout
+# ENTRYPOINT /usr/bin/python3 -m pytest -v --show-capture=stdout
