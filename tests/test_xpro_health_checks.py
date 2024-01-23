@@ -1,6 +1,6 @@
 import subprocess
-import pytest
-import testinfra
+import pytest  # type: ignore[import-not-found]
+import testinfra  # type: ignore[import-not-found]
 
 
 @pytest.fixture(scope="session")
@@ -14,7 +14,8 @@ def host(request):
             "ps",
             "-q",
             "lms",
-        ]
+        ],
+        stderr=subprocess.STDOUT,
     ).strip()
     lms_id = str(lms_id_bytes, encoding="utf-8")
     yield testinfra.get_host(f"docker://{lms_id}")

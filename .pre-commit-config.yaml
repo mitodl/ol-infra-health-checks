@@ -60,6 +60,8 @@ repos:
     - --namespace-packages
     - --config-file=pyproject.toml
     - --warn-unused-configs
+    - --install-types
+    - --non-interactive
     additional_dependencies:
     - pydantic>2
     - types-PyYAML
