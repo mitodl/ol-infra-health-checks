@@ -28,4 +28,4 @@ RUN mkdir /tests
 COPY tests /tests
 
 WORKDIR /healthcheck_api
-CMD ["uvicorn", "main:healthcheck", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:healthcheck", "--host", "0.0.0.0", "--port", "8097", "--proxy-headers"]
