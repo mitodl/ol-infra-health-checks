@@ -4,13 +4,20 @@ import subprocess
 healthcheck = FastAPI()
 
 
-@healthcheck.get("/healthcheck/{product}")
-async def root(product: str):
+@healthcheck.get("/healthcheck/{test_name}")
+async def root(test_name: str):
     # This feels dirty? But we always want flow to continue.
     test_output = None
     try:
         test_output = subprocess.run(
-            ["/usr/local/bin/python3", "-m", "pytest", "-v", "--show-capture=stdout"],
+            [
+                "/usr/local/bin/python3",
+                "-m",
+                "pytest",
+                "-v",
+                "--show-capture=stdout",
+                f"{test_name or ''}",
+            ],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
         )

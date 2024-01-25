@@ -20,10 +20,12 @@ RUN apt-get -y update
 RUN apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Install pytest & testinfra
-RUN /usr/local/bin/pip3 install pytest-testinfra
+RUN /usr/local/bin/pip3 install pytest-testinfra fastapi[all]
 
+RUN mkdir /healthcheck_api
+COPY healthcheck_api /healthcheck_api
 RUN mkdir /tests
 COPY tests /tests
 
-WORKDIR /tests
-CMD /usr/local/bin/python3 -m pytest -v --show-capture=stdout
+WORKDIR /healthcheck_api
+CMD ["uvicorn", "main:healthcheck", "--host", "0.0.0.0", "--port", "80"]
