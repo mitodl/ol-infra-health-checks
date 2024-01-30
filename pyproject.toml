@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ol-infra-health-checks"
+name = "healthcheck_api"
 version = "1.0.0"
 description = "MIT OL infrastructure health checks"
 authors = ["Chris Patti <feoh@feoh.org>"]
