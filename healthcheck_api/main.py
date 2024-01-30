@@ -20,6 +20,7 @@ async def root(test_name: str):
             ],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
+            cwd="/tests",
         )
     except Exception:
         pass
