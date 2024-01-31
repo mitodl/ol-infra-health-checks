@@ -22,7 +22,8 @@ async def root(test_name: str):
             stderr=subprocess.STDOUT,
             cwd="/tests",
         )
-    except Exception:
+    except Exception as exc:
+        print(exc)
         pass
 
     test_status = bool(test_output)
