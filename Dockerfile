@@ -22,6 +22,9 @@ RUN apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugi
 # Install pytest & testinfra
 RUN /usr/local/bin/pip3 install pytest-testinfra fastapi[all]
 
+# Install dagster & dagster_graphql
+RUN /usr/local/bin/pip3 install dagster dagster_graphql
+
 RUN mkdir /healthcheck_api
 COPY healthcheck_api /healthcheck_api
 RUN mkdir /tests
