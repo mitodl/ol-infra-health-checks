@@ -11,7 +11,7 @@ async def root(test_name: str):
             "/usr/local/bin/python3",
             "-m",
             "pytest",
-            "-v",
+            "-vv",
             "--show-capture=stdout",
             f"{test_name or ''}",
         ],
