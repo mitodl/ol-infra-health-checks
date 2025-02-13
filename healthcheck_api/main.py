@@ -6,7 +6,7 @@ healthcheck = FastAPI()
 
 @healthcheck.get("/healthcheck/{test_name}")
 async def root(test_name: str):
-    test_output = subprocess.run(
+    test_result = subprocess.run(
         [
             "/usr/local/bin/python3",
             "-m",
@@ -20,7 +20,10 @@ async def root(test_name: str):
         cwd="/tests",
     )
 
-    test_status = bool(test_output)
+    test_returncode = test_result.returncode
+    test_status = not test_returncode
+    test_output = test_result.stdout
+
     return {
         "test_status": test_status,
         "test_output": test_output,
