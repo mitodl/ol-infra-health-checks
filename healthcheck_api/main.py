@@ -4,7 +4,7 @@ import subprocess
 healthcheck = FastAPI()
 
 
-@healthcheck.get("/healthcheck/{test_name}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+@healthcheck.get("/healthcheck/{test_name}", status_code=status.HTTP_503_SERVICE_UNAVAILABLE)
 async def root(test_name: str, response: Response):
     test_result = subprocess.run(
         [
