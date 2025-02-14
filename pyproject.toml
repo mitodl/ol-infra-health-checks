@@ -1,0 +1,10 @@
+[project]
+name = "ol-infra-health-checks"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[all,standard]>=0.115.8",
+    "pytest>=8.3.4",
+]
