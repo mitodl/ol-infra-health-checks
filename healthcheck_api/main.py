@@ -1,10 +1,12 @@
-from fastapi import FastAPI, Response, status# type: ignore[import-not-found]
+from fastapi import FastAPI, Response, status  # type: ignore[import-not-found]
 import subprocess
 
 healthcheck = FastAPI()
 
 
-@healthcheck.get("/healthcheck/{test_name}", status_code=status.HTTP_503_SERVICE_UNAVAILABLE)
+@healthcheck.get(
+    "/healthcheck/{test_name}", status_code=status.HTTP_503_SERVICE_UNAVAILABLE
+)
 async def root(test_name: str, response: Response):
     test_result = subprocess.run(
         [
