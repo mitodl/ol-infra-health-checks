@@ -1,4 +1,4 @@
-FROM python:3.13-bookworm
+FROM python:3.15-bookworm@sha256:6f060cab421d9509c6c6a6a7762c651baf03c3f1d0145befe16b688762b7fe81
 
 VOLUME ["/var/run/docker.sock"]
 
